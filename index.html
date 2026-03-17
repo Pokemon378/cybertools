@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Playground</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1>Cyber Security Playground</h1>
+
+<div id="tools">
+
+    <!-- PASSWORD GENERATOR -->
+    <section>
+        <h2>Password Generator</h2>
+        <input id="generatedPassword" type="text" readonly>
+        <button onclick="generatePassword()">Generate Password</button>
+    </section>
+
+    <!-- PASSWORD STRENGTH CHECKER -->
+    <section>
+        <h2>Password Strength Checker</h2>
+        <input id="passwordInput" type="text" placeholder="Enter password">
+        <button onclick="checkStrength()">Check Strength</button>
+        <p id="strengthResult"></p>
+    </section>
+    
+    <!-- URL SAFTEY CHECKER -->
+     <section>
+        <h2>URL Safety Checker</h2>
+        <input id="urlInput" type="text" placeholder="Enter URL">
+        <button onclick="checkURL()">Check URL</button>
+        <p id="urlResult"></p>
+    </section>
+
+    <!-- STEGANOGRAPHY TOOL -->
+    <section>
+    <h2>Steganography Tool</h2>
+
+    <input type="file" id="imageInput">
+    <input type="text" id="secretMessage" placeholder="Enter secret message">
+
+    <button onclick="encodeMessage()">Hide Message</button>
+    <button onclick="decodeMessage()">Decode Message</button>
+    <p id="decodedMessage"></p>
+    
+    <canvas id="canvas"></canvas>
+
+    <a id="downloadLink" style="display:none;">Download Image</a>
+</section>
+
+</div>
+
+<script src="js/password-generator.js"></script>
+<script src="js/password-strength.js"></script>
+<script src="js/url-checker.js"></script>
+<script src="js/steganography.js"></script>
+<script src="js/reaction.js"></script>
+<script src="js/rps.js"></script>
+<script src="js/pong.js"></script>
+
+</body>
+</html>
