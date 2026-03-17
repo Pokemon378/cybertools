@@ -1,64 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber Security Playground</title>
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Playground</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Cyber Security Playground</h1>
+<div class="app-container">
+    <header class="cyber-header">
+        <h1>Cyber Security Playground</h1>
+        <p class="subtitle">A suite of essential security utilities</p>
+    </header>
 
-<div id="tools">
+    <main id="tools">
 
-    <!-- PASSWORD GENERATOR -->
-    <section>
-        <h2>Password Generator</h2>
-        <input id="generatedPassword" type="text" readonly>
-        <button onclick="generatePassword()">Generate Password</button>
-    </section>
+        <!-- PASSWORD GENERATOR -->
+        <section class="cyber-card">
+            <div class="card-header">
+                <h2>Password Generator</h2>
+            </div>
+            <div class="card-body">
+                <input id="generatedPassword" type="text" readonly placeholder="Your generated password...">
+                <button onclick="generatePassword()">Generate Password</button>
+            </div>
+        </section>
 
-    <!-- PASSWORD STRENGTH CHECKER -->
-    <section>
-        <h2>Password Strength Checker</h2>
-        <input id="passwordInput" type="text" placeholder="Enter password">
-        <button onclick="checkStrength()">Check Strength</button>
-        <p id="strengthResult"></p>
-    </section>
-    
-    <!-- URL SAFTEY CHECKER -->
-     <section>
-        <h2>URL Safety Checker</h2>
-        <input id="urlInput" type="text" placeholder="Enter URL">
-        <button onclick="checkURL()">Check URL</button>
-        <p id="urlResult"></p>
-    </section>
+        <!-- PASSWORD STRENGTH CHECKER -->
+        <section class="cyber-card">
+            <div class="card-header">
+                <h2>Password Strength Checker</h2>
+            </div>
+            <div class="card-body">
+                <input id="passwordInput" type="text" placeholder="Enter password to evaluate">
+                <button onclick="checkStrength()">Check Strength</button>
+                <div class="result-container">
+                    <p id="strengthResult"></p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- URL SAFTEY CHECKER -->
+        <section class="cyber-card">
+            <div class="card-header">
+                <h2>URL Safety Checker</h2>
+            </div>
+            <div class="card-body">
+                <input id="urlInput" type="text" placeholder="Enter URL (e.g., https://example.com)">
+                <button onclick="checkURL()">Check URL</button>
+                <div class="result-container">
+                    <p id="urlResult"></p>
+                </div>
+            </div>
+        </section>
 
-    <!-- STEGANOGRAPHY TOOL -->
-    <section>
-    <h2>Steganography Tool</h2>
+        <!-- STEGANOGRAPHY TOOL -->
+        <section class="cyber-card">
+            <div class="card-header">
+                <h2>Steganography Tool</h2>
+            </div>
+            <div class="card-body">
+                <div class="file-input-wrapper">
+                    <input type="file" id="imageInput" class="custom-file-input">
+                </div>
+                <input type="text" id="secretMessage" placeholder="Enter secret message to hide">
 
-    <input type="file" id="imageInput">
-    <input type="text" id="secretMessage" placeholder="Enter secret message">
+                <div class="button-group">
+                    <button class="btn-primary-green" onclick="encodeMessage()">Hide Message</button>
+                    <button class="btn-secondary" onclick="decodeMessage()">Decode Message</button>
+                </div>
+                <div class="result-container">
+                    <p id="decodedMessage"></p>
+                </div>
+                
+                <canvas id="canvas"></canvas>
 
-    <button onclick="encodeMessage()">Hide Message</button>
-    <button onclick="decodeMessage()">Decode Message</button>
-    <p id="decodedMessage"></p>
-    
-    <canvas id="canvas"></canvas>
+                <a id="downloadLink" class="btn-download" style="display:none;">Download Secured Image</a>
+            </div>
+        </section>
 
-    <a id="downloadLink" style="display:none;">Download Image</a>
-</section>
-
+    </main>
 </div>
 
 <script src="js/password-generator.js"></script>
 <script src="js/password-strength.js"></script>
 <script src="js/url-checker.js"></script>
 <script src="js/steganography.js"></script>
+<!-- Assuming other JS files exist for future tools -->
 <script src="js/reaction.js"></script>
 <script src="js/rps.js"></script>
 <script src="js/pong.js"></script>
